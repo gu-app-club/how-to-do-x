@@ -4,7 +4,11 @@ The following is a guide for how to get started with programming side projects. 
 
 ## Mobile Apps
 
+//TODO
+
 ## Linux
+
+//TODO
 
 ## Machine Learning
 
@@ -202,7 +206,6 @@ def login(username,password):
     else:
         print "Failed!"
 ```
--------  MAX, add it to your github.
 
 #### Step 3
 Here's the fun part: time to just mess around, read around and have fun with it! So, now that the authentication process works, now what? Well, the schema above has some major issues with it...
@@ -236,13 +239,95 @@ The hip thing right now! It's quite secure; so, understanding how this works wou
 
 ## Desktop apps
 
-## Video Games and Computer Graphics
+## Video Games 
+
+Building video game can be an incredibly fun way to get better at programming and it can also be a great artistic expression.
+
+For the purposes of this section, we'll split up this section into two pieces based on intent. Both paths are respectable goals.
+
+### I want to be a better programmer
+
+If you're building games out of a desire to be a better programmer, this path is for you. 
+
+You should build games without a graphical game engine. You're welcome to go down the OpenGL graphics route if you feel comfortable with C++, but this path will focus mainly on non-graphical games libraries.
+
+Note that you will likely make worse games with this path.
+
+#### Pick an Engine
+
+There's typically game engines for every programming language, but here's some good ones for individual languages:
+
+* Python: Pygame
+* Java: LibGDX
+* Ruby: Ruby2d
+* Javascript: Phaserjs
+
+#### A First Project
+
+Start small. Your first project should be moving a block on the screen. Get a window opening. Get a block on the screen. See if you can get the block to move when you press arrow keys. 
+
+### I want to make really good games
+
+If you're building games mostly because you want to make games and the programming is more of a means to an ends, this path is for you. 
+
+### Unity
+//TODO
+
+#### A First Project
+//TODO
 
 ## Frontend Web
 
+Web is weird. There's a whole lot to learn about it and it can be difficult to understand what to learn when.
+
+This section is primarily about "frontend-only" or "static" sites. That is, they don't connect to a server or database you wrote. The code _only_ runs on the browser.
+
+### First Steps - HTML 
+
+The simplest website is just a file called `index.html` with some text in it:
+
+```html
+<!-- index.html (note that this is a comment and not actually needed) -->
+
+hi there!
+```
+
+You may see other websites with things like `<!DOCTYPE html>` at the top. While important in real projects, they aren't required if you're just learning and you can ignore them for now. The browser will fill them in for you.
+
+Open up your `index.html` file by double clicking on it. Your browser will run it without the need for a server. 
+
+If you change your text now, you'll need to refresh your page. 
+
+HTML is full of `tags` that label specific content. The most common ones are as follows:
+
+```html
+<h1> I make headers! </h1>
+<h2> I make headers! </h2>
+<h3> I make headers! </h3>
+<h4> I make headers! </h4>
+<h5> I make headers! </h5>
+
+<p>I make a paragraph with a space afterwards.</p>
+
+<a href="https://github.com">I'm a link!</a>
+
+This is <b>BOLD</b>.
+```
+
+There are [a LOT of tags](https://www.w3schools.com/tags/tag_html.asp) out there. Thankfully, they're well documented and there's millions of examples out there! If you see something on a website you want to do, just right click in your browser and "inspect element".
+
+#### Adding style - CSS
+TODO
+
+
+#### Making it do things - Javascript
+
+
 ## Backend Web
+//TODO
 
 ## Infastructure and AWS
+//TODO
 
 ## Building Programming Languages
 
@@ -261,7 +346,7 @@ A good first project is to build a calculator that can compute things like this:
 ```
 1 + 2 * 5
 ```
-
+https://news.ycombinator.com/
 #### Step 1: Write a grammar
 
 You should probably write this in [EBNF form](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form). It doesn't need to have the exact same syntax, but it's useful to understand the conventions.
@@ -436,6 +521,12 @@ Build another language in your favorite language! Add variables, functions, arra
 
 ### Ruby
 
+//TODO
+
 ### C++
 
+//TODO
+
 ## Functional Programming
+
+//TODO
