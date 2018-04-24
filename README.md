@@ -8,6 +8,114 @@ The following is a guide for how to get started with programming side projects. 
 
 ## Machine Learning
 
+### Overview
+Machine learning is the act of teaching a computer to do something that cannot be solved with hard coded solutions. The big thing right now is machine learning! Self-driving cars, figuring out if a person has cancer... Machine learning is used in everything! But, it's really not that scary! We promise! There are some amazing libraries that make this very simple.  
+Okay, I lied a little bit. The math behind machine learning algorithms is quite scary at times. But, using the algorithms themselves are not that hard.
+
+### First Steps
+Picking a problem. Do you want to see how accurate you can predict the type of a cat based upon it's age, color, paw size and weight?   This can be done!
+
+### First Project
+Logistic regression is just like linear regression, but instead of Mx+b, it solving for a more advanced problem. We will be trying to predict the survivability of people on the [Titanic](https://raw.githubusercontent.com/BigDataGal/Python-for-Data-Science/master/titanic-train.csv) based upon Sex, Age, Fare and many more features. The data set can be found.  
+It should be known which libraries are used in this model:  
+```  
+import numpy as np
+import pandas as pd
+import statsmodels.formula.api as sm
+from patsy import dmatrices
+```
+These will be talked about later. Install these using pip
+
+### Step 1
+The first step to doing any sort of machine learning algorithm is getting data for this first. There are a wide range of [data sets](http://archive.ics.uci.edu/ml/datasets.html) publicly available on the Internet, ready to be used.  
+But, you can write a web scraper to take information from Wikipedia, Google or hold polls to get your information if you cannot find what you're looking for. Our data has already been made and formatted for us luckily!
+
+
+### Step 2
+- [Pick an algorithm to use](https://blog.statsbot.co/machine-learning-algorithms-183cc73197c?gi=cdcbc147c7a0):
+At a high level, there are two types of algorithms: supervised and unsupervised. *Supervised* means to give the inputs and outputs to the set, hoping to come up with a function that can represent the data correctly. This is quite more common; support vector machines, neural nets and much,much more. *Unsupervised* means to give the inputs to the set, hoping to learn something about the data. This will *create* the outputs for you. An example of this is K-means algorithm, which tries to find the amount of different clusters are in the dataset.
+- Don't be afraid:  
+It's okay to try out multiple algorithms for your problem! You can try them all if you want!  
+For our project we'll be using Logistic regression to predict the model.
+
+### Step 3
+Learn the algorithm/how to do it:
+There are two things that can be done here: Learn the mathematics and complete understanding of the algorithm or learn how to use the algorithm at a level, which is just understanding how it works. This will just go through the implementation of the algorithms, rather than the math. But, these are out there! So, if you're looking for a deeper understanding then good luck!  
+
+There are several libraries that can be used for this sort of thing. [Sklearn](http://scikit-learn.org/) has implementation for practically any algorithm that you could find, that is quite easy to use.  
+For [neural nets](http://neuralnetworksanddeeplearning.com/chap1.html) has a fantastic implementation of a neural net AND dives deep into the mathematics.  
+[Andrew Ng](https://www.coursera.org/learn/machine-learning) has a fantastic series on machine learning in general.  
+- Short list of machine learning algorithms that are common
+    - Neural Networks(deep, convolutional, modular)  
+    Great for representing data that cannot easily be easily mapped.
+    - Support Vector Machines:  
+    A sequence classifier; practically just sets a line into the data.
+    - Linear Regression:   
+    Finds a linear representation of the data. Note: Think Mx+b. This just finds a representation of the data that's a linear line. It can be done for more than one input also.
+    - K-nearest Neighbor:  
+    An algorithm for clustering data. It will group it into k groups.  
+    - Logistic Regression:  
+    Finds a sigmoid function represented version of the data.
+
+### Step 4
+Converting the data into a form that the algorithm can understand:  
+Very, very, very important! How is a picture represented? A 28 by 28 picture will be represented binary values of 0's and 1's depending on the brightness of the picture. This will be 784 inputs into the neural network.  
+
+- [Representing Data](https://machinelearningmastery.com/how-to-prepare-data-for-machine-learning/):   
+This is a good article about transforming data in the right way.  
+- [Text Classification](https://machinelearnings.co/text-classification-using-neural-networks-f5cd7b8765c6?gi=35cadf2889a3):  
+Representing Twitter would be great! But, how does this work? That's a great question! This shows off to represent the information.  
+- Our project already has most of the data formatted how we would like. But, there are a few issues with some data points. For instance, does passengerID really have anything to do with the accuracy of the model? No, not at all. So, dropping features that don't pertain to the actual result are important. We will drop passengerID, Ticket, Name and Cabin from the Titanic dataset.
+
+A few standards in the ML land:  
+- Python is great for machine learning algorithms!
+- Data is held in **csv** files typically. These are huge sorts of data, that are represented as rows for the data point and columns for each feature.
+- Pandas **dataframes** are how the data is stored inside of Python. They are great for manipulating the data put into the dataframe.
+- **Numpy** is the most common way to store a matrix. Use this or beware of the consequences.
+
+For getting the data in Python use pandas! The function below reads the Titanic data as a csv file into the dataframe:
+```
+def get_data():
+    df = pd.read_csv("https://raw.githubusercontent.com/BigDataGal/Python-for-Data-Science/master/titanic-train.csv")
+    return df
+```
+
+To drop the columns from the table, we use the tables of the columns in a similar command.
+```
+    df = get_data()
+    data = df.drop(columns = ['PassengerId','Ticket','Name','Cabin'])
+```
+
+These aren't cold cut things that need to be used, but they're very nifty to work with!
+
+## Step 5
+Run the tests! So, this has a few particular ways it's supposed to be done:   
+- Split the data into a training set and testing set. The training set is for teaching the model; while the testing set is for checking for the accuracy of it.  
+- Train the model:  
+This looks like running all of the training data through the machine learning algorithm itself.  
+- Test the model:  
+Give the trained algorithm a set of inputs, without the output. After this, check to see how many the model accurately predicted.  
+- Try again!:  
+Don't just run the model once; run it at least three times in order to understand the actual accuracy of the model.
+- Don't overfit:  
+The term 'overfitting' means to run the algorithm over so many times on the training set, that the model will ONLY be correct for the training set. In practice, don't run the algorithm through too many iterations. This sounds like a great idea but the output from the testing set and other unknown values will yield bad results.  
+
+Code for using statsmodels to create the model:  
+    ```
+    y, X = dmatrices("Survived ~ Pclass+Sex+Age+SibSp+Parch+Fare+Embarked", df, return_type = 'dataframe')
+    ```
+Training and testing the model:
+```
+    logit = sm.Logit(y,X)
+    result = logit.fit()
+    print result.summary2()
+```
+
+## Step 6
+How was the accuracy? It probably came out to be very bad... but, that's okay! Try with less features, give it more or less data points, try a different machine learning algorithm entirely! Mr Beaver, who works as NextIT on systems trying to understand context of spoken language, claimed who would test 10 different ML algorithms to see which one worked the best for him. So, enjoy the endless amount of possibilities in the field!
+
+
+
 ## Security
 ### Overview
 Security itself is a very broad topic, as it encapsulates every app, website, backend or anything else very created that can be seen. Understanding basic security concepts for different types of applications is essential to make a good app. For instance, when using a backend database it's very important to use prepared statements with parameters. Otherwise, information could be stolen from the database, which makes a frowny face.
