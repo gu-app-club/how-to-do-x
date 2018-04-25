@@ -239,7 +239,7 @@ The hip thing right now! It's quite secure; so, understanding how this works wou
 
 ## Desktop apps
 
-## Video Games 
+## Video Games
 
 Building video game can be an incredibly fun way to get better at programming and it can also be a great artistic expression.
 
@@ -247,7 +247,7 @@ For the purposes of this section, we'll split up this section into two pieces ba
 
 ### I want to be a better programmer
 
-If you're building games out of a desire to be a better programmer, this path is for you. 
+If you're building games out of a desire to be a better programmer, this path is for you.
 
 You should build games without a graphical game engine. You're welcome to go down the OpenGL graphics route if you feel comfortable with C++, but this path will focus mainly on non-graphical games libraries.
 
@@ -264,11 +264,11 @@ There's typically game engines for every programming language, but here's some g
 
 #### A First Project
 
-Start small. Your first project should be moving a block on the screen. Get a window opening. Get a block on the screen. See if you can get the block to move when you press arrow keys. 
+Start small. Your first project should be moving a block on the screen. Get a window opening. Get a block on the screen. See if you can get the block to move when you press arrow keys.
 
 ### I want to make really good games
 
-If you're building games mostly because you want to make games and the programming is more of a means to an ends, this path is for you. 
+If you're building games mostly because you want to make games and the programming is more of a means to an ends, this path is for you.
 
 ### Unity
 //TODO
@@ -282,7 +282,7 @@ Web is weird. There's a whole lot to learn about it and it can be difficult to u
 
 This section is primarily about "frontend-only" or "static" sites. That is, they don't connect to a server or database you wrote. The code _only_ runs on the browser.
 
-### First Steps - HTML 
+### First Steps - HTML
 
 The simplest website is just a file called `index.html` with some text in it:
 
@@ -294,9 +294,9 @@ hi there!
 
 You may see other websites with things like `<!DOCTYPE html>` at the top. While important in real projects, they aren't required if you're just learning and you can ignore them for now. The browser will fill them in for you.
 
-Open up your `index.html` file by double clicking on it. Your browser will run it without the need for a server. 
+Open up your `index.html` file by double clicking on it. Your browser will run it without the need for a server.
 
-If you change your text now, you'll need to refresh your page. 
+If you change your text now, you'll need to refresh your page.
 
 HTML is full of `tags` that label specific content. The most common ones are as follows:
 
@@ -518,6 +518,122 @@ Create a formatter that takes an existing programming language, converts it to a
 Build another language in your favorite language! Add variables, functions, arrays, and more!
 
 ## Learning specific programming languages
+
+### Python
+Python is a beautiful language to pick up. It's simple syntax, easy to read and great for writing quick scripts. Sometimes the code is so beautiful, it's referred to as 'Pythonic Beauty'. The language is also very flexible. To make things better, it has an unbelievable amount of libraries made already for us to use! However, it can be slow some of the time, sadly.
+- [10 Reason to Use Python](https://medium.com/@joshdotai/10-reasons-python-is-awesome-3dcb98a1291a)
+
+#### First Program
+Of course, the first program has to be print hello world.   
+Python makes this quite simple; lucky for us!  
+```
+print("hello world")
+```
+Boom, your first Python program!  
+
+#### Basic Python  
+In Java, C++ and quite a few other languages, scope is defined with curly braces ({). A function may look like
+`int get_val(int x){ return x;}`.  
+Instead of using curly braces to show scope, Python uses tabs. The code above in C++ is identical to
+```
+def get_val(x):
+    return x
+```
+Notice the tab above to represent the scope to return x.
+Another thing you have probably realized by now is that Python also doesn't define types. This is referred to as *type inference*. In C++, to define a variable we must use `int x = 5;`. But, in Python, the code is just `x = 5`. The language is able to figure out that the variable x is of type int simply because the right hand side, 5, is an integer. Type inference can make Python very nice to code in, but difficult to decode at times. It's easy to be comparing an int to a string, and take forever to find it.
+
+#### Basic Constructs
+
+- Types:  
+int, float, boolean, string, list, dict, are the basic types that are great to know. int, float and string are self explanatory. A boolean value is a true or false, a binary representation of something. Then a list is essentially an array in C++. Dictionary is a key, mapped to a value of some kind.
+
+- Operators:  
+Plus(+), minus(-), multiple(\*), divide(/), modulo(%). The first three are quite simple to use, with no strange perks. However, be careful with the **division** operator. For instance, 5/2, will not be 2.5 but 2. This is done because of integer division. So, be very careful when using division to make sure the right type of value is being used. By adding a float type definition around the divisor, this will fix this issue. Lastly, modulo takes the remainder of the division done.
+
+- Conditional Operators:  
+The operators are ==, >=, <=, !=, <, >. These are self explanatory so it's not needed to talk much about much more. != is the not equal operator.
+
+- Lists:  
+Lists are a great way to store data! Lists are a ordered list, which are really nice to deal with. If we have the list of numbers 1,2,3,4,5, then we write `lst = [1,2,3,4,5]`. Accessing the first element is `lst[0]`. To access the last item in the list use a -1 as the index.  
+
+- For loops:  
+The below will display 1,2,3,4,5
+```
+for index in range(5):
+    print(index)
+```
+To iterate over a list, it's like this:
+```
+for element in lst:
+    print element
+```
+With what is above, the element represents the nth item in the lst.
+
+- Functions:  
+A function is a way to split up code such that it makes the program smaller, reusable and easier to follow. In Python, a function is defined with the `def function_name(par1, par2):` An example of a function that adds 10 to a value then divides by 2 is:  
+```
+def add10_div2(x):
+    val = (10+x) /2
+    return val
+```
+
+- If statements:    
+In order to do conditional statements in Python,, if statements are used. The basic constructs are if, elif and else. if is the initial if statement, elif is the conditional statements following and else is the final clause.  
+```
+if(x == 1):
+    return 1
+elif(x >= 2):
+    return 2
+else:
+    return 3
+```
+
+#### Using Python!
+Let's do something a little more complicated! Fizzbuzz sounds like a great choice!
+```
+# single line comments
+def Fizzbuzz(amount):
+    """
+    multi-line comments
+    """
+    for i in range(amount):
+        if(i % 3 == 0):
+            print("fizz")
+        elif(i % 5 == 0):
+            print "buzz"
+        elif(i % 15 ==  0):
+            print("Fizzbuzz!!!")
+        else:
+            pass
+    return 1
+```
+
+#### Deeper  
+These are the absolute bare bones of Python; so, there is so much more to learn!  
+Here are a few resources:  
+- [The New Boston with Bucky Roberts](https://www.youtube.com/watch?v=hnxIRVZ0EyU):  
+Is one of the best in the business for learning programming languages. Highly recommended!  
+- [Py Slackers](https://pyslackers.com/):  
+A group of people who love all things Python!  
+- [w3schools](https://www.w3schools.in/python-tutorial/):  
+Another step by step tutorial
+
+#### Miscellaneous
+A few more things about Python should be stated:  
+- Pip:  
+Pip is the Python package installer used on most systems. The command looks like `pip install numpy`, where numpy is the package.  
+- Where to code with it:  
+Using a text editor then compiling in the terminal is a common option for this. A few text editors that work well are atom, visual studio code and sublime. This will give a person more control over the environment themselves, but can be more difficult to maintain. Now, there is also an **IDE(Integrated Development Environment**) where the code is written in the text editor then compiled inside of this text editor. A few Python IDE's are PyCharm, PyDev and IDLE.
+
+
+
+
+
+
+
+
+
+
 
 ### Ruby
 

@@ -28,6 +28,8 @@
 
 ## Cloud computing
 - AWS
+- Intro to node
+- Containers (Docker)
 
 ## Security
 - Hacking in general; what it is.
