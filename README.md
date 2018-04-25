@@ -26,7 +26,6 @@ The following is a guide for how to get started with programming side projects. 
   * [Adding style - CSS](#adding-style---css)
   * [Making it do things - Javascript](#making-it-do-things---javascript)
 - [Backend Web](#backend-web)
-- [Infastructure and AWS](#infastructure-and-aws)
 - [Building Programming Languages](#building-programming-languages)
   * [Overview](#overview-2)
   * [First Project](#first-project-2)
@@ -339,6 +338,7 @@ If you change your text now, you'll need to refresh your page.
 HTML is full of `tags` that label specific content. The most common ones are as follows:
 
 ```html
+<!-- This is a comment and ignored! -->
 <h1> I make headers! </h1>
 <h2> I make headers! </h2>
 <h3> I make headers! </h3>
@@ -355,16 +355,37 @@ This is <b>BOLD</b>.
 There are [a LOT of tags](https://www.w3schools.com/tags/tag_html.asp) out there. Thankfully, they're well documented and there's millions of examples out there! If you see something on a website you want to do, just right click in your browser and "inspect element".
 
 ### Adding style - CSS
-TODO
 
+If HTML is the "bones" of the website, CSS is the "skin" of the website. 
+To get started, we can add a special tag to the top of the HTML file called `style` that looks like this:
+
+```html
+<style>
+h1 {
+  color: red;
+}
+</style>
+
+<!-- ... Then the rest of your HTML -->
+```
+
+CSS "selectors" start with an element, then a bracket, then "rules". There's a whole bunch of these and you can find more about them [here.](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Syntax)
 
 ### Making it do things - Javascript
 
+Javascript is a programming language that works in the browser and is used to make your websites interactive. 
+
+To run some javascript, you can use a special `script` tag:
+
+```html
+<script>
+console.log("Hello world"!)
+</script>
+```
+
+The Javascript world is full of libraries that you can use to do just about anything via [npm](https://www.npmjs.com/).
 
 ## Backend Web
-//TODO
-
-## Infastructure and AWS
 //TODO
 
 ## Building Programming Languages
@@ -662,16 +683,6 @@ A few more things about Python should be stated:
 Pip is the Python package installer used on most systems. The command looks like `pip install numpy`, where numpy is the package.  
 - Where to code with it:  
 Using a text editor then compiling in the terminal is a common option for this. A few text editors that work well are atom, visual studio code and sublime. This will give a person more control over the environment themselves, but can be more difficult to maintain. Now, there is also an **IDE(Integrated Development Environment**) where the code is written in the text editor then compiled inside of this text editor. A few Python IDE's are PyCharm, PyDev and IDLE.
-
-
-
-
-
-
-
-
-
-
 
 ### Ruby
 
