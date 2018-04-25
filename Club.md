@@ -5,6 +5,8 @@
 - Applying and reaching out to companies
 - Interviews
 - Open Source
+- Agile Methology 
+- DevOps
 - Jobs and jobs! What is out there?
 - Setting up environments (VM's, languages, etc.)
 
@@ -24,7 +26,7 @@
 - How to read and write research papers
 - Debugging code
 - Contributing to open source projects
-- Getting plugged in (reddit, slack,blogs,professional groups, conferences)
+- Getting plugged in (reddit, slack, blogs,professional groups, conferences)
 
 ## Cloud computing
 - AWS
