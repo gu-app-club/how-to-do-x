@@ -20,7 +20,7 @@ Okay, I lied a little bit. The math behind machine learning algorithms is quite 
 Picking a problem. Do you want to see how accurate you can predict the type of a cat based upon it's age, color, paw size and weight?   This can be done!
 
 ### First Project
-Logistic regression is just like linear regression, but instead of Mx+b, it solving for a more advanced problem. We will be trying to predict the survivability of people on the [Titanic](https://raw.githubusercontent.com/BigDataGal/Python-for-Data-Science/master/titanic-train.csv) based upon Sex, Age, Fare and many more features. The data set can be found.  
+Logistic regression is just like linear regression, but instead of Mx+b, it solving for a more advanced problem. We will be trying to predict the survivability of people on the [Titanic](https://raw.githubusercontent.com/BigDataGal/Python-for-Data-Science/master/titanic-train.csv) based upon Sex, Age, Fare and many more features. The data set can be found in a link above. 
 It should be known which libraries are used in this model:  
 ```  
 import numpy as np
@@ -28,7 +28,7 @@ import pandas as pd
 import statsmodels.formula.api as sm
 from patsy import dmatrices
 ```
-These will be talked about later. Install these using pip
+These will be talked about later. Install these using pip, the python package installer. 
 
 ### Step 1
 The first step to doing any sort of machine learning algorithm is getting data for this first. There are a wide range of [data sets](http://archive.ics.uci.edu/ml/datasets.html) publicly available on the Internet, ready to be used.  
@@ -37,13 +37,13 @@ But, you can write a web scraper to take information from Wikipedia, Google or h
 
 ### Step 2
 - [Pick an algorithm to use](https://blog.statsbot.co/machine-learning-algorithms-183cc73197c?gi=cdcbc147c7a0):
-At a high level, there are two types of algorithms: supervised and unsupervised. *Supervised* means to give the inputs and outputs to the set, hoping to come up with a function that can represent the data correctly. This is quite more common; support vector machines, neural nets and much,much more. *Unsupervised* means to give the inputs to the set, hoping to learn something about the data. This will *create* the outputs for you. An example of this is K-means algorithm, which tries to find the amount of different clusters are in the dataset.
+At a high level, there are two types of algorithms: supervised and unsupervised. *Supervised* means to give the inputs and outputs to the set, hoping to come up with a function that can represent the data correctly. This is quite more common; support vector machines, neural nets and much,much more. *Unsupervised* means to give the inputs to the set, hoping to learn something about the data. This will *create* the outputs for you. An example of this is MeanShift algorithm, which tries to find the amount of different clusters are in the dataset.
 - Don't be afraid:  
 It's okay to try out multiple algorithms for your problem! You can try them all if you want!  
 For our project we'll be using Logistic regression to predict the model.
 
 ### Step 3
-Learn the algorithm/how to do it:
+Learn the algorithm/how to do it:  
 There are two things that can be done here: Learn the mathematics and complete understanding of the algorithm or learn how to use the algorithm at a level, which is just understanding how it works. This will just go through the implementation of the algorithms, rather than the math. But, these are out there! So, if you're looking for a deeper understanding then good luck!  
 
 There are several libraries that can be used for this sort of thing. [Sklearn](http://scikit-learn.org/) has implementation for practically any algorithm that you could find, that is quite easy to use.  
