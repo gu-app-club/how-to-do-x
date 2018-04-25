@@ -10,17 +10,10 @@ The following is a guide for how to get started with programming side projects. 
   * [Overview](#overview)
   * [First Steps](#first-steps)
   * [First Project](#first-project)
-  * [Step 1](#step-1)
-  * [Step 2](#step-2)
-  * [Step 3](#step-3)
-  * [Step 4](#step-4)
-- [Step 5](#step-5)
-- [Step 6](#step-6)
 - [Security](#security)
   * [Overview](#overview-1)
   * [First Steps](#first-steps-1)
   * [First Project](#first-project-1)
-  * [Step 4](#step-4-1)
   * [What else?](#what-else)
   * [Projects](#projects)
 - [Desktop apps](#desktop-apps)
@@ -30,6 +23,8 @@ The following is a guide for how to get started with programming side projects. 
   * [Unity](#unity)
 - [Frontend Web](#frontend-web)
   * [First Steps - HTML](#first-steps---html)
+  * [Adding style - CSS](#adding-style---css)
+  * [Making it do things - Javascript](#making-it-do-things---javascript)
 - [Backend Web](#backend-web)
 - [Infastructure and AWS](#infastructure-and-aws)
 - [Building Programming Languages](#building-programming-languages)
@@ -73,19 +68,19 @@ from patsy import dmatrices
 ```
 These will be talked about later. Install these using pip, the python package installer. 
 
-### Step 1
+#### Step 1
 The first step to doing any sort of machine learning algorithm is getting data for this first. There are a wide range of [data sets](http://archive.ics.uci.edu/ml/datasets.html) publicly available on the Internet, ready to be used.  
 But, you can write a web scraper to take information from Wikipedia, Google or hold polls to get your information if you cannot find what you're looking for. Our data has already been made and formatted for us luckily!
 
 
-### Step 2
+#### Step 2
 - [Pick an algorithm to use](https://blog.statsbot.co/machine-learning-algorithms-183cc73197c?gi=cdcbc147c7a0):
 At a high level, there are two types of algorithms: supervised and unsupervised. *Supervised* means to give the inputs and outputs to the set, hoping to come up with a function that can represent the data correctly. This is quite more common; support vector machines, neural nets and much,much more. *Unsupervised* means to give the inputs to the set, hoping to learn something about the data. This will *create* the outputs for you. An example of this is MeanShift algorithm, which tries to find the amount of different clusters are in the dataset.
 - Don't be afraid:  
 It's okay to try out multiple algorithms for your problem! You can try them all if you want!  
 For our project we'll be using Logistic regression to predict the model.
 
-### Step 3
+#### Step 3
 Learn the algorithm/how to do it:  
 There are two things that can be done here: Learn the mathematics and complete understanding of the algorithm or learn how to use the algorithm at a level, which is just understanding how it works. This will just go through the implementation of the algorithms, rather than the math. But, these are out there! So, if you're looking for a deeper understanding then good luck!  
 
@@ -104,7 +99,7 @@ For [neural nets](http://neuralnetworksanddeeplearning.com/chap1.html) has a fan
     - Logistic Regression:  
     Finds a sigmoid function represented version of the data.
 
-### Step 4
+#### Step 4
 Converting the data into a form that the algorithm can understand:  
 Very, very, very important! How is a picture represented? A 28 by 28 picture will be represented binary values of 0's and 1's depending on the brightness of the picture. This will be 784 inputs into the neural network.  
 
@@ -135,7 +130,7 @@ To drop the columns from the table, we use the tables of the columns in a simila
 
 These aren't cold cut things that need to be used, but they're very nifty to work with!
 
-## Step 5
+#### Step 5
 Run the tests! So, this has a few particular ways it's supposed to be done:   
 - Split the data into a training set and testing set. The training set is for teaching the model; while the testing set is for checking for the accuracy of it.  
 - Train the model:  
@@ -158,7 +153,7 @@ Training and testing the model:
     print result.summary2()
 ```
 
-## Step 6
+#### Step 6
 How was the accuracy? It probably came out to be very bad... but, that's okay! Try with less features, give it more or less data points, try a different machine learning algorithm entirely! Mr Beaver, who works as NextIT on systems trying to understand context of spoken language, claimed who would test 10 different ML algorithms to see which one worked the best for him. So, enjoy the endless amount of possibilities in the field!
 
 
@@ -259,7 +254,7 @@ Within databases, as in everything are different types of users, which can do di
 - **SQL Injections**:  
 An SQL injection is a way to insert arbitrary code into the system, just with the user input. With this, it's possible to get not only the information initially asked for, but everything from the database! There are thousands of ways to get information out of a database like this! A basic SQL injection for the query `SELECT * FROM Login WHERE username = '%s' AND password = '%s'` where %s is the string being inserted into the query is putting `dummy' OR '1' OR '1`. This will then give the database `SELECT * FROM Login WHERE username = 'dumb' AND password = 'dummy' OR '1' OR '1'`, which will log the user in. Further, we can just use a comment, which is '--' in SQL, to escape the code. This goes on, and on and on! The way to fix this is to use **prepared statements** in the query instead of just plain text. Or, to do an input validation, such as removing all quotations or something like that.
 
-### Step 4
+#### Step 4
 Keep pushing the boundaries of how this authentication process works! Create a [timing based](https://github.com/mdulin2/Timing-Based-SQL-Injection) SQL injection or salt the passwords! The better you understand it, the better you're going to understand how another website might be set up. You'll also understand more about how to make your software more secure!
 
 ### What else?
@@ -359,11 +354,11 @@ This is <b>BOLD</b>.
 
 There are [a LOT of tags](https://www.w3schools.com/tags/tag_html.asp) out there. Thankfully, they're well documented and there's millions of examples out there! If you see something on a website you want to do, just right click in your browser and "inspect element".
 
-#### Adding style - CSS
+### Adding style - CSS
 TODO
 
 
-#### Making it do things - Javascript
+### Making it do things - Javascript
 
 
 ## Backend Web
